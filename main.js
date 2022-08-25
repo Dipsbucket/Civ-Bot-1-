@@ -1,10 +1,9 @@
-const Discord = require('discord.js');
+const client = require('./connection');
 const fs = require('fs');
-const client = new Discord.Client();
 import { Leaders, pickedLeaders } from './leaders.js'
 
 const prefix = '!';
-var aux = [];
+let aux = [];
 
 client.commands = new Discord.Collection();
  
@@ -29,9 +28,9 @@ client.on('message', message =>{
 
     if(command === 'draft'){
         const numberOfPlayers = messageArray[1];
-        var i = 2;
-        var j = 0;
-        var bannedLeaders = [];
+        let i = 2;
+        let j = 0;
+        let bannedLeaders = [];
         while(messageArray[i] != undefined)
         {   
             bannedLeaders[j] = messageArray[i];
@@ -43,4 +42,4 @@ client.on('message', message =>{
     }
 });
 
-client.login('Nzk4NjM1MjE1OTY2ODMwNjYy.X_35AQ.mmvQ_ZnDKaW9e_5OkqU6WqdKOIY');
+client.login(TOKEN);
