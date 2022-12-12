@@ -12,15 +12,22 @@ module.exports = (client) => {
 
       for (const file of commandFiles) {
         const command = require(`../../commands/${folder}/${file}`);
-        client.commands.set(command.data.name, command);
-        client.commandArray.push(command.data.toJSON());
+        if (command.data) {
+          client.commands.set(command.data.name, command);
+          client.commandArray.push(command.data.toJSON());
+        } else {
+          console.log(
+            `[WARNING] Command ../../commands/${folder}/${file} is not defined.\n`
+          );
+        }
       }
     }
 
-    const clientID = "798635215966830662";
     const rest = new REST({ version: "9" }).setToken(process.env.TOKEN);
     try {
-      await rest.put(Routes.applicationCommands(clientID), { body: client.commandArray });
+      await rest.put(Routes.applicationCommands(process.env.CLIENT_ID), {
+        body: client.commandArray,
+      });
     } catch (error) {
       console.error(error);
     }
