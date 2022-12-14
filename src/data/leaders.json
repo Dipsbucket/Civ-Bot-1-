@@ -1,5 +1,10 @@
 [
     {
+        "name": "Abraham Lincoln",
+        "civ": "ESTADOS UNIDOS",
+        "emoji": ""
+    },
+    {
         "name": "Alexandre",
         "civ": "MACEDÔNIA",
         "emoji": "<:Alexandre:799362245128618004>"
@@ -13,6 +18,11 @@
         "name": "Ambiorix",
         "civ": "GÁLIA",
         "emoji": "<:Ambiorix:799365348695736390>"
+    },
+    {
+        "name": "Ba Trieu",
+        "civ": "VIETNÃ",
+        "emoji": ""
     },
     {
         "name": "Basílio II",
@@ -120,14 +130,34 @@
         "emoji": "<:Jayavarman_VII_28civ629:799370880961871882>"
     },
     {
+        "name": "João III",
+        "civ": "PORTUGAL",
+        "emoji": ""
+    },
+    {
         "name": "John Curtin",
         "civ": "AUSTRÁLIA",
         "emoji": "<:JohnCurtin:799370879997575231>"
     },
     {
+        "name": "Júlio Cesar",
+        "civ": "IMPÉRIO ROMANO",
+        "emoji": ""
+    },
+    {
         "name": "Kupe",
         "civ": "MAORI",
         "emoji": "<:Kupe_28civ629:799370881717370880>"
+    },
+    {
+        "name": "Kublai Khan",
+        "civ": "CHINA",
+        "emoji": ""
+    },
+    {
+        "name": "Kublai Khan",
+        "civ": "MONGÓLIA",
+        "emoji": ""
     },
     {
         "name": "Leonor da Aquitânia",
@@ -168,6 +198,11 @@
         "name": "Mvemba Nzinga",
         "civ": "CONGO",
         "emoji": "<:Mvemba:799370882182807552>"
+    },
+    {
+        "name": "Nzinga Mbande",
+        "civ": "CONGO",
+        "emoji": ""
     },
     {
         "name": "Pachacuti",

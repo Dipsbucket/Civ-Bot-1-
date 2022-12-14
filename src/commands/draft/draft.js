@@ -6,18 +6,19 @@ const draft = (players, bannedLeaders, leadersArray) => {
 
   const map = maps[Math.floor(Math.random() * maps.length)];
 
-  const leadersSize = Math.floor(leadersArray.length / players);
-
-  leadersArray.filter((leader) => {
+  
+  const disponibleLeaders =  leadersArray.filter((leader) => {
     return !bannedLeaders.includes(leader.name);
   });
 
+  const leadersSize = Math.floor(disponibleLeaders.length / players);
+  
   for (let i = 0; i < players; i++) {
     draftedLeaders.push([]);
     for (let j = 0; j < leadersSize; j++) {
-      const leaderIndex = Math.floor(Math.random() * leadersArray.length);
-        draftedLeaders[i].push(leadersArray[leaderIndex]);
-        leadersArray.splice(leaderIndex, 1);
+      const leaderIndex = Math.floor(Math.random() * disponibleLeaders.length);
+        draftedLeaders[i].push(disponibleLeaders[leaderIndex]);
+        disponibleLeaders.splice(leaderIndex, 1);
     }
   }
 
@@ -32,9 +33,9 @@ const draftDisplay = (map, bannedLeaders, draftArray) => {
   if (bannedLeaders.length != 0) {
     for (i in bannedLeaders) {
       banString += bannedLeaders[i];
+      if (i != bannedLeaders.length - 1) banString += ", ";
     }
-    if (i != bannedLeaders.length - 1) banString += ", ";
-    else banString += ".";
+    banString += ".";
   } else {
     banString += "nenhum.";
   }
@@ -43,6 +44,7 @@ const draftDisplay = (map, bannedLeaders, draftArray) => {
   for (i in draftArray) {
     draftStringArray.push([""]);
     for (j in draftArray[i]) {
+      if (draftArray[i][j].emoji === "") draftArray[i][j].emoji = "‎ ".repeat(7)
       draftStringArray[i] +=
         draftArray[i][j].emoji +
         " " +
@@ -55,7 +57,7 @@ const draftDisplay = (map, bannedLeaders, draftArray) => {
 
   const draftEmbed = new EmbedBuilder()
     .setColor("#012b06")
-    .setTitle("Game Draft")
+    .setTitle("Draft do Jogo")
     .setDescription(banString + "\n" + "Mapa: " + map)
     .addFields({
       name: "Jogador 1:",
@@ -131,7 +133,7 @@ module.exports = {
     ),
   async execute(interaction, client) {
     const leadersJSON = require("../../data/leaders.json");
-    let leaders = leadersJSON;
+    let leaders = JSON.parse(JSON.stringify(leadersJSON));
 
     const message = await interaction.deferReply({
       fetchReply: true,
