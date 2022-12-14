@@ -61,43 +61,43 @@ const draftDisplay = (map, bannedLeaders, draftArray) => {
     .setDescription(banString + "\n" + "Mapa: " + map)
     .addFields({
       name: "Jogador 1:",
-      value: draftStringArray[0] || "Jogador fora do jogo",
+      value: draftStringArray[0] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 2:",
-      value: draftStringArray[1] || "Jogador fora do jogo",
+      value: draftStringArray[1] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 3:",
-      value: draftStringArray[2] || "Jogador fora do jogo",
+      value: draftStringArray[2] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 4:",
-      value: draftStringArray[3] || "Jogador fora do jogo",
+      value: draftStringArray[3] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 5:",
-      value: draftStringArray[4] || "Jogador fora do jogo",
+      value: draftStringArray[4] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 6:",
-      value: draftStringArray[5] || "Jogador fora do jogo",
+      value: draftStringArray[5] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 7:",
-      value: draftStringArray[6] || "Jogador fora do jogo",
+      value: draftStringArray[6] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 8:",
-      value: draftStringArray[7] || "Jogador fora do jogo",
+      value: draftStringArray[7] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 9:",
-      value: draftStringArray[8] || "Jogador fora do jogo",
+      value: draftStringArray[8] || "Fora do jogo",
     })
     .addFields({
       name: "Jogador 10:",
-      value: draftStringArray[9] || "Jogador fora do jogo",
+      value: draftStringArray[9] || "Fora do jogo",
     });
 
   return draftEmbed;
